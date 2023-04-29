@@ -8,6 +8,8 @@ const Slider = require("./models/slider");
 // import routes form main or routes
 const routes = require("./routes/main");
 const Service = require("./models/service");
+const About = require("./models/about");
+const Footer = require("./models/footer");
 //Database Connection
 const mongoose = require("mongoose");
 
@@ -17,7 +19,7 @@ app.set("views", "views");
 app.use("/static", express.static("public"));
 // Use the bodyParser
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 // parents samma ko path chaiyo vane __dirname use garne
 hbs.registerPartials("views/partials");
 // app.get("/login", function (req, res) {

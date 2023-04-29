@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const Contact = mongoose.Schema({
+const Footer = mongoose.Schema({
   name: String,
   email: String,
   subject: String,
@@ -8,4 +8,4 @@ const Contact = mongoose.Schema({
   message: String,
 });
 
-module.exports = mongoose.model("contacts", Contact);
+module.exports = mongoose.model("footers", Footer);

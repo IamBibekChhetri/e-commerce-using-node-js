@@ -5,6 +5,9 @@ const router = express.Router();
 const Detail = require("../models/detail");
 const Slider = require("../models/slider");
 const Service = require("../models/service");
+const Contact = require("../models/contact");
+const About = require("../models/about");
+const Footer = require("../models/footer");
 
 router.get("/welcome", (req, res) => {
   res.send("Hello from home");
@@ -36,6 +39,23 @@ router.get("/contact", async (req, res) => {
   });
 });
 
+router.get("/about", async (req, res) => {
+  const details = await Detail.findOne({ _id: "644b68450f99ef4cf6c758e8" });
+  res.render("about", {
+    details: details,
+  });
+});
+
+router.post("/action-form", async (req, res) => {
+  try {
+    const data = await Contact.create(req.body);
+    console.log(data);
+    res.redirect("/contact");
+  } catch (e) {
+    console.log(e);
+    res.redirect("/");
+  }
+});
 // router.post("/slider", async function (req, res) {
 //   const title = req.body.title;
 //   const subtitle = req.body.subtitle;
