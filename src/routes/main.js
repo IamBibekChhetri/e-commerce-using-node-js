@@ -29,6 +29,13 @@ router.get("/", async (req, res) => {
   });
 });
 
+router.get("/contact", async (req, res) => {
+  const details = await Detail.findOne({ _id: "644b68450f99ef4cf6c758e8" });
+  res.render("contact", {
+    details: details,
+  });
+});
+
 // router.post("/slider", async function (req, res) {
 //   const title = req.body.title;
 //   const subtitle = req.body.subtitle;

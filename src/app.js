@@ -26,6 +26,7 @@ hbs.registerPartials("views/partials");
 
 //routes ma vako main file ko routes tanne
 app.use("/", routes);
+app.use("/user", routes);
 
 app.listen(process.env.PORT | 5555, () => {
   console.log("Server is running");
